@@ -1,0 +1,10 @@
+const path = require('path');
+const fs = require('fs');
+const Database = require('better-sqlite3');
+const dbPath = path.join(__dirname, '..', 'tokenly.db');
+console.log('Absolute DB Path:', path.resolve(dbPath));
+const db = new Database(dbPath);
+db.prepare('CREATE TABLE IF NOT EXISTS test_sync (id INTEGER PRIMARY KEY)').run();
+console.log('File exists after write:', fs.existsSync(dbPath));
+const stats = fs.statSync(dbPath);
+console.log('File stats:', stats.mtime, stats.size);

@@ -1,0 +1,2 @@
+-- Optional: extension-safe placeholder. Schema is created by app `initializeSchema`.
+-- Add additive DDL here when you need versioned history separate from runtime migrations.
